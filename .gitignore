@@ -9,6 +9,6 @@ yarn-error.log*
 .pnp.js
 
 .vscode/*
-.idea
 
 .DS_Store
+/.idea/
