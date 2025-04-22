@@ -1,0 +1,24 @@
+{
+  "name": "MongoDB Lab Runner",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "lab-runner",
+  "workspaceFolder": "/home/jovyan/work",
+  "forwardPorts": [
+    8888,
+    27017
+  ],
+  "hostRequirements": {"cpus": 4},
+  "containerEnv": {
+    "SERVERLESS_URL": "https://vtqjvgchmwcjwsrela2oyhlegu0hwqnw.lambda-url.us-west-2.on.aws/"
+  },
+  "postCreateCommand": "pip install -r /home/jovyan/requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-tools.vscode-jupyter"
+      ]
+    }
+  },
+  "remoteUser": "jovyan"
+}

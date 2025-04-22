@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  lab-runner:
+    build:
+      context: ./jupyter  # Relative path to the jupyter folder
+      dockerfile: Dockerfile
+    volumes:
+      - ./notebooks:/home/jovyan/work  # Mounts a local folder for your notebooks
+    ports:
+      - "8888:8888"
+    depends_on:
+      - mongodb
+    user: "1000:100" #Set user and group ID.
+
+  mongodb:
+    image: mongodb/mongodb-atlas-local:latest
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+    command: --quiet #suppress output
+
+volumes:
+  mongodb_data:
