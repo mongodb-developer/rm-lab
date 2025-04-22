@@ -16,5 +16,8 @@
     "codespaces": {"openFiles": []},
     "vscode": {"extensions": ["ms-toolsai.jupyter", "ms-python.python"]},
   },
-  "remoteUser": "jovyan"
+  "remoteUser": "jovyan",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind,consistency=cached",
+  ]
 }
