@@ -14,10 +14,15 @@
   "postCreateCommand": "pip install -r /home/jovyan/requirements.txt",
   "customizations": {
     "codespaces": {"openFiles": []},
-    "vscode": {"extensions": ["ms-toolsai.jupyter", "ms-python.python"]},
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-tools.vscode-jupyter"
+      ],
+      "settings": {
+        "terminal.integrated.cwd": "/home/jovyan/work"
+      }
+    }
   },
   "remoteUser": "jovyan",
-  "mounts": [
-    "type=bind,source=${localWorkspaceFolder},target=/home/jovyan/work,consistency=cached"
-  ]
 }
