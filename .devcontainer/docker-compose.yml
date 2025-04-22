@@ -4,7 +4,7 @@ services:
       context: ./jupyter  # Relative path to the jupyter folder
       dockerfile: Dockerfile
     volumes:
-      - ./notebooks:/home/jovyan/work  # Mounts a local folder for your notebooks
+      - ./notebooks:/home/jovyan/work # Mounts a local folder for your notebooks
     depends_on:
       - mongodb
     user: "1000:100" #Set user and group ID.

@@ -18,6 +18,6 @@
   },
   "remoteUser": "jovyan",
   "mounts": [
-    "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind,consistency=cached",
+    "type=bind,source=${localWorkspaceFolder},target=/home/jovyan/work,consistency=cached"
   ]
 }
