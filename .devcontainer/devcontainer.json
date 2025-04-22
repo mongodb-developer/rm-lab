@@ -13,15 +13,8 @@
   },
   "postCreateCommand": "pip install -r /home/jovyan/requirements.txt",
   "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "ms-tools.vscode-jupyter"
-      ],
-      "settings": {
-        "terminal.integrated.cwd": "/home/jovyan/work"
-      }
-    }
+    "codespaces": {"openFiles": []},
+    "vscode": {"extensions": ["ms-toolsai.jupyter", "ms-python.python"]},
   },
   "remoteUser": "jovyan"
 }
