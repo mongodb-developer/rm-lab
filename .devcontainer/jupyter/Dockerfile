@@ -16,4 +16,3 @@ COPY ./data/library.tgz /home/jovyan/library.tgz
 
 # run database instalation
 RUN /home/jovyan/install-mongodb-db-tools.sh
-RUN /home/jovyan/import.sh
