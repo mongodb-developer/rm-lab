@@ -21,8 +21,8 @@
         "ms-tools.vscode-jupyter",
         "ms-toolsai.jupyter",
         "mongodb.mongodb-vscode"
-      ],
+      ]
     }
-  },
-  "remoteUser": "jovyan"
+  }
+  //"remoteUser": "jovyan"
 }
