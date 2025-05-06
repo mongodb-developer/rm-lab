@@ -12,7 +12,7 @@
     "SERVERLESS_URL": "https://vtqjvgchmwcjwsrela2oyhlegu0hwqnw.lambda-url.us-west-2.on.aws/"
   },	
   "updateContentCommand": "bash .devcontainer/install-mongodb-db-tools.sh",
-	"postCreateCommand": "bash .devcontainer/setup.sh && bash .devcontainer/import.sh && pip install -r /home/jovyan/requirements.txt",
+	"postCreateCommand": "pip install -r /home/jovyan/requirements.txt && bash .devcontainer/import.sh",
   "customizations": {
     "codespaces": {"openFiles": []},
     "vscode": {
