@@ -11,7 +11,7 @@
   "containerEnv": {
     "SERVERLESS_URL": "https://vtqjvgchmwcjwsrela2oyhlegu0hwqnw.lambda-url.us-west-2.on.aws/"
   },	
-	"postCreateCommand": "pip install -r /home/jovyan/requirements.txt && bash /home/jovyan/install-mongodb-db-tools.sh && bash /home/jovyan/import.sh",
+	"postCreateCommand": "pip install -r /home/jovyan/requirements.txt && bash /home/jovyan/import.sh",
   "customizations": {
     "codespaces": {"openFiles": []},
     "vscode": {
