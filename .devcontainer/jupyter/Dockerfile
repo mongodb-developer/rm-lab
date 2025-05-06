@@ -9,3 +9,5 @@ RUN apt-get update && \
 
 # Copy the requirements.txt
 COPY requirements.txt /home/jovyan/requirements.txt
+COPY install-mongodb-db-tools.sh /home/jovyan/install-mongodb-db-tools.sh
+COPY import.sh /home/jovyan/import.sh
