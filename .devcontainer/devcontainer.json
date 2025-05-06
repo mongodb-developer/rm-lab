@@ -10,8 +10,9 @@
   "hostRequirements": {"cpus": 4},
   "containerEnv": {
     "SERVERLESS_URL": "https://vtqjvgchmwcjwsrela2oyhlegu0hwqnw.lambda-url.us-west-2.on.aws/"
-  },
-  "postCreateCommand": "pip install -r /home/jovyan/requirements.txt",
+  },	
+  "updateContentCommand": "bash .devcontainer/install-mongodb-db-tools.sh",
+	"postCreateCommand": "bash .devcontainer/setup.sh && bash .devcontainer/import.sh && pip install -r /home/jovyan/requirements.txt",
   "customizations": {
     "codespaces": {"openFiles": []},
     "vscode": {
@@ -23,5 +24,5 @@
       ],
     }
   },
-  "remoteUser": "jovyan",
+  "remoteUser": "jovyan"
 }
