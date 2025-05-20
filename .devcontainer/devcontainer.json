@@ -7,21 +7,23 @@
     8888,
     27017
   ],
-  "hostRequirements": {"cpus": 4},
+  "hostRequirements": {
+    "cpus": 4
+  },
   "containerEnv": {
-    "SERVERLESS_URL": "https://vtqjvgchmwcjwsrela2oyhlegu0hwqnw.lambda-url.us-west-2.on.aws/"
+    "SERVERLESS_URL": "https://vtqjvgchmwcjwsrela2oyhlegu0hwqnw.lambda-url.us-west-2.on.aws/",
+    "MONGODB_URI": "mongodb://admin:mongodb@mongodb:27017/"
   },	
-	"postCreateCommand": "pip install -r /home/jovyan/requirements.txt && bash /home/jovyan/import.sh",
+	"postCreateCommand": "bash /home/import.sh",
   "customizations": {
     "codespaces": {"openFiles": []},
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "ms-tools.vscode-jupyter",
         "ms-toolsai.jupyter",
+        "ms-tools.vscode-jupyter",
         "mongodb.mongodb-vscode"
       ]
     }
   }
-  //"remoteUser": "jovyan"
 }

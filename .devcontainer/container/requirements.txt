@@ -1,0 +1,12 @@
+pymongo
+datasets
+langchain
+langchain-aws
+langchain-google-genai
+langchain-openai
+langgraph
+langgraph-checkpoint-mongodb
+tiktoken
+sentence_transformers
+tqdm
+Pillow

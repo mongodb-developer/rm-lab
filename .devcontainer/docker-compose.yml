@@ -1,7 +1,7 @@
 services:
   lab-runner:
     build:
-      context: ./jupyter  # Relative path to the jupyter folder
+      context: ./container  # Relative path to the container folder
       dockerfile: Dockerfile
     volumes:
       - ../..:/workspaces:cached
