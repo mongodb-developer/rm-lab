@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/universal:linux
+FROM mcr.microsoft.com/devcontainers/universal:2
 
 USER root
 RUN apt-get update && \
