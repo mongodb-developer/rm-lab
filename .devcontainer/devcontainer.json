@@ -4,7 +4,7 @@
   "service": "lab-runner",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [
-    8888,
+    8080,
     27017
   ],
   "hostRequirements": {
