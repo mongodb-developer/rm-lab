@@ -8,7 +8,7 @@
     27017
   ],
   "hostRequirements": {
-    "cpus": 4
+    "cpus": 1
   },
   "containerEnv": {
     "SERVERLESS_URL": "https://vtqjvgchmwcjwsrela2oyhlegu0hwqnw.lambda-url.us-west-2.on.aws/",
