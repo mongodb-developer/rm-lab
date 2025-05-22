@@ -1,4 +1,4 @@
-# Run MongoDB Labs from Dev Containers
+# Run MongoDB Relational Migrator from Dev Containers
 
 ## Database connection
 
