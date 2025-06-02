@@ -8,7 +8,5 @@ yarn-error.log*
 /.pnp
 .pnp.js
 
-.vscode/*
-
 .DS_Store
 /.idea/
