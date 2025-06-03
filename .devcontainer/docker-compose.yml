@@ -4,9 +4,8 @@ services:
       context: ./container  # Relative path to the container folder
       dockerfile: Dockerfile
     depends_on:
-      mongodb:
-        condition: service_healthy
-        restart: true
+      - mongodb
+
     volumes:
       - ../..:/workspaces:cached
     user: "1000:100" #Set user and group ID.
@@ -22,32 +21,14 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      mongodb:
-        condition: service_healthy
-      postgres:
-        condition: service_healthy
+      - mongodb
     volumes:
       - MIGRATOR_PATH_DATA:/root/Migrator
-      - MIGRATOR_PATH_DRIVER:/opt/mongodb-relational-migrator/lib/app/lib/driver.jar
-
-  postgres:
-    image: postgres
-    container_name: postgres-library-db
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: postgres    
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
-      interval: 10s
-      timeout: 3s
-      retries: 3
-      start_period: 2s
+      - MIGRATOR_PATH_DRIVER:/opt/mongodb-relational-migrator/lib/app/lib/driver.jar  
 
   mongodb:
     image: mongodb/mongodb-atlas-local:latest
-    command: mongod --port 27017
+    restart: unless-stopped
     ports:
       - "27017:27017"
     volumes:
@@ -55,12 +36,6 @@ services:
     environment:
       - MONGODB_INITDB_ROOT_USERNAME=admin
       - MONGODB_INITDB_ROOT_PASSWORD=mongodb
-    healthcheck:
-      test: mongosh --eval 'db.hello()'
-      interval: 10s
-      timeout: 3s
-      retries: 3
-      start_period: 2s
 
 volumes:
   mongodb_data:
