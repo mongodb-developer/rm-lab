@@ -16,23 +16,36 @@ services:
     network_mode: service:mongodb
 
   migrator:
-    image: public.ecr.aws/v4d7k6c9/relational-migrator:1.13.1
+    image: public.ecr.aws/v4d7k6c9/relational-migrator:1.13.2
     ports:
       - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      - mongodb
     volumes:
       - MIGRATOR_PATH_DATA:/root/Migrator
       - MIGRATOR_PATH_DRIVER:/opt/mongodb-relational-migrator/lib/app/lib/driver.jar
 
+  postgres:
+    image: postgres
+    container_name: postgres-library-db
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres
+
   mongodb:
     image: mongodb/mongodb-atlas-local:latest
+    ports:
+      - "27017:27017"
     restart: unless-stopped
     volumes:
       - mongodb_data:/data/db
     environment:
       - MONGODB_INITDB_ROOT_USERNAME=admin
       - MONGODB_INITDB_ROOT_PASSWORD=mongodb
-    ports:
-      - "27017:27017"
 
 volumes:
   mongodb_data:

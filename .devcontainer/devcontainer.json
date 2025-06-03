@@ -4,6 +4,7 @@
   "service": "lab-runner",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [
+    5432,
     8080,
     27017
   ],
@@ -11,10 +12,9 @@
     "cpus": 1
   },
   "containerEnv": {
-    "SERVERLESS_URL": "https://vtqjvgchmwcjwsrela2oyhlegu0hwqnw.lambda-url.us-west-2.on.aws/",
     "MONGODB_URI": "mongodb://admin:mongodb@mongodb:27017/"
   },	
-	"postCreateCommand": "bash /home/import.sh",
+	"postCreateCommand": "bash /home/import.sh && bash /home/create-mongodb-user.sh",
   "customizations": {
     "codespaces": {"openFiles": []},
     "vscode": {
