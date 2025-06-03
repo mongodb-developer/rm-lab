@@ -30,7 +30,7 @@ services:
     image: postgres
     container_name: postgres-library-db
     ports:
-      - "5433:5432"
+      - "5432:5432"
     restart: unless-stopped
     environment:
       POSTGRES_USER: admin
