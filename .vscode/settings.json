@@ -1,7 +1,7 @@
 {
     "mdb.presetConnections": [
         {
-            "name": "Library DB",
+            "name": "mongodb container",
             "connectionString": "mongodb://admin:mongodb@localhost:27017"
         }
     ]
