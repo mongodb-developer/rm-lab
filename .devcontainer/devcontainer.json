@@ -12,7 +12,7 @@
     "cpus": 1
   },
   "containerEnv": {
-    "MONGODB_URI": "mongodb://admin:mongodb@mongodb:27017/"
+    "MONGODB_URI": "mongodb://admin:mongodb@localhost:27017/"
   },	
 	"postCreateCommand": "bash /import.sh && bash /create-mongodb-user.sh",
   "customizations": {
