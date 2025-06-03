@@ -1,6 +1,6 @@
 /tmp
 /out-tsc
-/.devcontainer/data/library
+/.devcontainer/data/library/
 
 /node_modules
 npm-debug.log*
