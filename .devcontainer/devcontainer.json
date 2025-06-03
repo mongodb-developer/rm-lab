@@ -14,7 +14,7 @@
   "containerEnv": {
     "MONGODB_URI": "mongodb://admin:mongodb@mongodb:27017/"
   },	
-	"postCreateCommand": "bash /home/import.sh && bash /home/create-mongodb-user.sh",
+	"postCreateCommand": "bash /import.sh && bash /create-mongodb-user.sh",
   "customizations": {
     "codespaces": {"openFiles": []},
     "vscode": {

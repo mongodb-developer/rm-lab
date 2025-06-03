@@ -3,10 +3,12 @@ services:
     build:
       context: ./container  # Relative path to the container folder
       dockerfile: Dockerfile
+    depends_on:
+      mongodb:
+        condition: service_healthy
+        restart: true
     volumes:
       - ../..:/workspaces:cached
-    depends_on:
-      - mongodb
     user: "1000:100" #Set user and group ID.
 
     # Overrides default command so things don't shut down after the process ends.
@@ -19,9 +21,11 @@ services:
     image: public.ecr.aws/v4d7k6c9/relational-migrator:1.13.2
     ports:
       - "8080:8080"
-    restart: unless-stopped
     depends_on:
-      - mongodb
+      mongodb:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
     volumes:
       - MIGRATOR_PATH_DATA:/root/Migrator
       - MIGRATOR_PATH_DRIVER:/opt/mongodb-relational-migrator/lib/app/lib/driver.jar
@@ -31,21 +35,32 @@ services:
     container_name: postgres-library-db
     ports:
       - "5432:5432"
-    restart: unless-stopped
     environment:
       POSTGRES_USER: admin
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: postgres    
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 2s
 
   mongodb:
     image: mongodb/mongodb-atlas-local:latest
+    command: mongod --port 27017
     ports:
       - "27017:27017"
-    restart: unless-stopped
     volumes:
       - mongodb_data:/data/db
     environment:
       - MONGODB_INITDB_ROOT_USERNAME=admin
       - MONGODB_INITDB_ROOT_PASSWORD=mongodb
+    healthcheck:
+      test: mongosh --eval 'db.hello()'
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 2s
 
 volumes:
   mongodb_data:

@@ -6,12 +6,9 @@ RUN apt-get update && \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
+    
 # Copy necessary files
-COPY install-mongodb-db-tools.sh /home/install-mongodb-db-tools.sh
-COPY import.sh /home/import.sh
-COPY create-mongodb-user.js /home/create-mongodb-user.js
-COPY create-mongodb-user.sh /home/create-mongodb-user.sh 
+COPY /commands/ /
 
 # run tools instalation
-RUN /home/install-mongodb-db-tools.sh
+RUN /install-mongodb-db-tools.sh
