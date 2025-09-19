@@ -2,7 +2,7 @@
     "mdb.presetConnections": [
         {
             "name": "MongoDB destination container",
-            "connectionString": "mongodb://admin:mongodb@mongo:27017"
+            "connectionString": "mongodb://admin:mongodb@mongodb:27017"
         }
     ]
 }
