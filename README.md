@@ -2,7 +2,7 @@
 
 ## Workshop instructions
 
-You can access the lab [here](https://mdb.link/rm-workshop)
+You can access the lab instructions [here](https://mdb.link/rm-workshop)
 
 ## Database connection
 
@@ -11,3 +11,11 @@ This codespace runs a `mongodb-local` image, you can connect to it from the VS C
 ```
 mongodb://admin:mongodb@mongodb:27017/
 ```
+
+## Launch Relational Migrator
+
+Open http://localhost:8080 in your browser.
+To import, use this MongoDB Connection string: 
+```
+mongodb://admin:mongodb@mongodb:27017/?authSource=admin
+``` 

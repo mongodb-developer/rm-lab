@@ -12,15 +12,16 @@
   },
   "containerEnv": {
     "MONGODB_URI": "mongodb://admin:mongodb@localhost:27017/"
-  },	
-	"postCreateCommand": "",
+  },
+  "postAttachCommand": "sh .devcontainer/create-library-user.sh",
   "customizations": {
-    "codespaces": {"openFiles": []},
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
     "vscode": {
       "extensions": [
-        "ms-python.python",
-        "ms-toolsai.jupyter",
-        "ms-tools.vscode-jupyter",
         "mongodb.mongodb-vscode"
       ]
     }
