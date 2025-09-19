@@ -17,5 +17,5 @@ mongodb://admin:mongodb@mongodb:27017/
 Open http://localhost:8080 in your browser.
 To import, use this MongoDB Connection string: 
 ```
-mongodb://admin:mongodb@mongodb:27017/?authSource=admin
+mongodb://admin:mongodb@mongodb:27017/library?authSource=admin
 ``` 
