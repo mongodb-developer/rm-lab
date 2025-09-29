@@ -14,7 +14,7 @@ mongodb://admin:mongodb@mongodb:27017/
 
 ## Launch Relational Migrator
 
-Open http://localhost:8080 in your browser.
+Open the codespace URL with port `8080`  in your browser.
 To import, use this MongoDB Connection string: 
 ```
 mongodb://admin:mongodb@mongodb:27017/library?authSource=admin
