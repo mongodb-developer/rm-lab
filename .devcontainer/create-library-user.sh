@@ -1,2 +1,2 @@
-# we create a user to be able to import data into MongoDB
-mongosh .devcontainer/create-library-user.js
+#!/usr/bin/bash
+mongosh mongodb://localhost:27017/admin --file .devcontainer/create-library-user.js --quiet

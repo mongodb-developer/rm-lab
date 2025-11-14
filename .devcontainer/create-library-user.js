@@ -1,4 +1,4 @@
-use library
+#!/usr/bin/env mongosh
 
 db.createUser({
   user: "admin",
@@ -9,5 +9,3 @@ db.createUser({
     { role: "readWrite", db: "library" }
   ]
 });
-
-print("User 'admin' created in 'library' database.");  
