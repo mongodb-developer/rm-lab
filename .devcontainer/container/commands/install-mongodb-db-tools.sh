@@ -24,9 +24,9 @@ rm "./${TARGET}"
 # https://downloads.mongodb.com/compass/mongosh-2.4.0-linux-arm64.tgz
 
 echo "Installing mongosh"
-if [ ARCH = "amd64" ]; then export MONGO_SHELL="mongosh-2.4.0-linux-x64"; else export MONGO_SHELL="mongosh-2.4.0-linux-arm64"; fi 
+if [ $ARCH = "amd64" ]; then export MONGO_SHELL="mongosh-2.4.0-linux-x64"; else export MONGO_SHELL="mongosh-2.4.0-linux-arm64"; fi 
 curl "https://downloads.mongodb.com/compass/${MONGO_SHELL}.tgz" --output "${MONGO_SHELL}.tgz" 
 tar xvfz "${MONGO_SHELL}.tgz"
 rm "./${MONGO_SHELL}.tgz"
-sudo cp mongosh-2.4.0-linux-arm64/bin/* /usr/local/bin/
+sudo cp $MONGO_SHELL/bin/* /usr/local/bin/
 rm -rf "./${MONGO_SHELL}"
