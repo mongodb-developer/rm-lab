@@ -17,7 +17,7 @@ services:
     network_mode: service:mongodb
 
   migrator:
-    image: public.ecr.aws/v4d7k6c9/relational-migrator:1.14.0
+    image: public.ecr.aws/v4d7k6c9/relational-migrator:1.15.3
     ports:
       - "8080:8080"
     depends_on:
